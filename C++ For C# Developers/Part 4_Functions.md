@@ -1,6 +1,6 @@
 ﻿# C++ For C# Developers: Part 4 – Functions
 
-> 注：本文译自该[博客](https://www.jacksondunstan.com/articles/5543),仅供学习参考
+> 注：本文译自该[博客](https://www.jacksondunstan.com/articles/5547),仅供学习参考
 > </br>在这个类似这种提示框内，皆为本人看法，如有错误欢迎指正
 
 该系列今天继续提供函数。这些显然是任何编程语言的核心，但它们与 C# 中的函数有多少不同并不明显。从编译时执行到自动返回值类型，目前有很多差异需要涵盖。
