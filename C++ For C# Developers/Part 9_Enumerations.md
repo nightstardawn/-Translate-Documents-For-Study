@@ -182,6 +182,29 @@ DebugLog(red, green, blue); // 0xff0000, 0x00ff00, 0x0000ff
 ```
 
 最后，没有像C#中的`[Flags]`属性那样的特殊处理位标志。所有未限定的枚举类型的枚举值可以直接使用：
+> 这里读者补充一下C#中`[Flags]`的相关知识点
+> </br>首先要明确的是即使没有`[Flags]`特性，你仍然可以执行位运算。
+> </br>通常，`[Flags]`枚举的成员值应该是2的幂（即1, 2, 4, 8, ...），这样每个成员代表一个独立的位,也可以使用位移运算（`<<`）来定义，以避免手动计算2的幂。
+> </br>给一个例子
+> ```csharp
+> [Flags]
+> public enum DaysOfWeek
+> {
+>     None    = 0,     // 0
+>     Monday  = 1 << 0, // 1 (二进制: 00000001)
+>     Tuesday = 1 << 1, // 2 (二进制: 00000010)
+>     Wednesday=1 << 2, // 4 (二进制: 00000100)
+>     Thursday=1 << 3, // 8 (二进制: 00001000)
+>     Friday  = 1 << 4, // 16 (二进制: 00010000)
+>     Saturday=1 << 5, // 32 (二进制: 00100000)
+>     Sunday  = 1 << 6  // 64 (二进制: 01000000)
+>     Weekend = Saturday | Sunday,
+>     WorkDays = Monday | Tuesday | Wednesday | Thursday | Friday
+> }
+> ```
+> 还有特别的一点，当枚举被标记为`[Flags]`时，其`ToString`方法会尝试将组合的枚举值显示为用逗号分隔的名称。例如，DaysOfWeek.Saturday | DaysOfWeek.Sunday 会被显示为 "Saturday, Sunday"。如果没有`[Flags]`特性，则只会显示数字值（如96）。
+> 
+> </br>总之`[Flags]`特性主要是为了改变枚举的行为（如ToString）以及增加代码的可读性，表明该枚举设计用于位域操作。
 
 ```c++
 enum Channel
