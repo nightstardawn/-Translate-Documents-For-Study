@@ -1,4 +1,4 @@
-# C++ For C# Developers: Part 8 – References
+# C++ For C# Developers: Part 9 – Enumerations
 
 > 注：本文译自该[博客](https://www.jacksondunstan.com/articles/5601),仅供学习参考
 > </br>在这个类似这种提示框内，皆为本人看法，如有错误欢迎指正
