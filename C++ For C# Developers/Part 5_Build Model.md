@@ -357,7 +357,7 @@ bool IsOrthogonal(float aX, float aY, float bX, float bY)
 }
 ```
 
-## Inline  内嵌
+## Inline  内联
 
 即使ODR编译器错误已经修复，我们仍然存在问题：链接错误。原因是`vector.cpp`的翻译单元也包含`PI`的一个副本。以下是原始代码的样式：
 
